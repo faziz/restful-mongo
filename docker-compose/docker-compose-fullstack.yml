@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  tradeledger:
+    image: faziz-tradeledger:0.0.1-SNAPSHOT
+    restart: always
+    container_name: tradeledger
+    environment:
+      - spring.data.mongodb.uri=mongodb://mongodb/eventdb
+      - server.port=6868
+    ports:
+      - 6868:6868
+    working_dir: /var/app
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27777:27017"
+    volumes:
+      - ./mongo/data:/data/db
+  mongo-seed:
+    image: mongo:latest
+    links:
+      - mongodb
+    volumes:
+      - ./seed-data:/seed-data
+    command:
+      'bash -c "mongoimport --host mongodb --db eventdb --collection user  --type json --file /seed-data/users.json --jsonArray && 
+                mongoimport --host mongodb --db eventdb --collection event --type json --file /seed-data/events.json --jsonArray"'
