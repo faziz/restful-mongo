@@ -33,7 +33,15 @@ This project uses a number of open source projects to work properly:
 
 ### How to Run
 
-You only need Java 8 and Docker installed on your machine.
+You only need Java 8 and Docker installed on your machine. On my Linux laptop I am running following application versions,
+
+openjdk version "1.8.0_222"
+OpenJDK Runtime Environment (build 1.8.0_222-8u222-b10-1ubuntu1~19.04.1-b10)
+OpenJDK 64-Bit Server VM (build 25.222-b10, mixed mode)
+
+Docker version 18.09.7, build 2d0083d
+
+docker-compose version 1.21.0, build unknown
 
 To build the application .
 
