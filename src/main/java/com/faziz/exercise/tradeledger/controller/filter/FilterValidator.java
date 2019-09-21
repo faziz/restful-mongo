@@ -1,6 +1,5 @@
 package com.faziz.exercise.tradeledger.controller.filter;
 
-import com.faziz.exercise.tradeledger.controller.filter.Filter;
 import com.faziz.exercise.tradeledger.controller.filter.Filter.Range;
 import static java.util.Arrays.asList;
 import java.util.List;
