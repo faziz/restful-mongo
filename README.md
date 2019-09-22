@@ -56,7 +56,7 @@ For production environments...
 
 ```sh
 $ cd restful-mongo
-$ ./gradlew clean check buildDockerImage
+$ ./gradlew clean check dockerBuildImage
 $ docker-compose -f docker-compose/docker-compose-fullstack.yml up -d
 ```
 This would run all the tests and then build a docker image of the restful application. The last statement then bring up the whole application stack.
